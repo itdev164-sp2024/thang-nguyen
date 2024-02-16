@@ -3,7 +3,9 @@
  *
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
-
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -11,7 +13,7 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `Thang Nguyen`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
     contact:{
       name: 'Thang Nguyen',
@@ -23,8 +25,8 @@ module.exports = {
     {
       resolve : `gatsby-source-contentful`,
       options:{
-        spaceId: `86bwvycos9dr`,
-        accessToken: `5t-c4LLzy5W-pXbNaRuSO1bYWEz3Vxd2EdI5-9_qQJY`
+        spaceId: `${process.env.SPACE_ID}`,
+        accessToken: `${process.env.ACCESS_TOKEN}`
       }
 
     },
@@ -36,6 +38,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
