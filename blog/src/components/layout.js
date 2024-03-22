@@ -6,7 +6,7 @@ import styled from "styled-components"
 import { ThemeProvider } from 'styled-components';
 
 
-import Header from "./header"
+import {Header} from "./Header"
 import "./layout.css"
 import { Gray } from "./themes/Gray"
 
