@@ -5,7 +5,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import { ThemeProvider } from 'styled-components';
 
-
+import {Main} from './Main'
+import {Footer} from './Footer'
 import {Header} from "./Header"
 import "./layout.css"
 import { Gray } from "./themes/Gray"
@@ -32,8 +33,8 @@ return (
   <ThemeProvider theme={Gray}>
     <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
     <Content>
-      <main> {children} </main> 
-      <footer 
+      <Main> {children} </Main> 
+      <Footer 
         style={{
           marginTop: `var(--space-5)`,
           fontSize: `var(--font-sm)`,
@@ -42,7 +43,7 @@ return (
           {new Date().getFullYear()} &middot; Built with
           {``}
           <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+        </Footer>
     </Content>
   </ThemeProvider>
 )}
